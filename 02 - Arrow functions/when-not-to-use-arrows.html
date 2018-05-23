@@ -47,12 +47,12 @@
   const orderChildren = function() {
     const children = Array.from(arguments);
     return children.map((child, i) => {
-      return `${child} was child #${i + 1}`;
-    })
-    console.log(arguments);
+      return `${child} was #${i + 1}`;
+    });
   }
 
-
+  const myChildrenOrder = orderChildren('Zhenya', 'Olga', 'Masha', 'Viktor');
+  console.log(myChildrenOrder);
 </script>
 </body>
 </html>
