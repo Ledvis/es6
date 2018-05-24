@@ -23,6 +23,17 @@
 
   cuts.shop = 'MM MEats';
 
+  const human = {
+    name: 'Zhenya',
+    surname: 'Fedyai',
+    age: 27,
+    sex: 'male'
+  }
+
+  for (const prop in human) {
+    console.log(`Cuts.${prop} = ${human[prop]}`);
+  }
+
   // for (let i = 0; i < cuts.length; i++) {
   //   console.log(cuts[i]);
   // }
@@ -39,7 +50,14 @@
   // }
 
   for (const cut of cuts) {
-    if(cut === 'Brisket') {
+    if (cut === 'Shank') {
+      break;
+    }
+    console.log(cut);
+  }
+
+  for (const cut of cuts) {
+    if (cut === 'Brisket') {
       continue;
     }
     console.log(cut);
