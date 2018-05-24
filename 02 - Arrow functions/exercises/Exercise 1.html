@@ -47,7 +47,7 @@
       return mins * 60 + secs;
     })
     // reduce to get total
-    .reduce((total, secs) => total + secs);
+    .reduce((total, secs) => total + secs, 0);
     // 🔥 This can also be done in a single .reduce(), but we're practicing arrow functions here, so chain them!
 
 </script>
