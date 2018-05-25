@@ -6,13 +6,13 @@
 </head>
 <body>
 <script>
-  const p = new Promise((resolve, reject) => {
+  const test = new Promise((resolve, reject) => {
     setTimeout(() => {
-      reject(Error('Err wes isn\'t cool'));
+      reject(new Error('New data isn\'t here!'));
     }, 1000);
   });
 
-  p
+  test
     .then(data => {
       console.log(data);
     })

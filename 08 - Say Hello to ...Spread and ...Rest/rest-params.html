@@ -6,21 +6,17 @@
 </head>
 <body>
 <script>
-  // function convertCurrency(rate, tax, tip, ...amounts) {
-  //   console.log(rate, tax, tip, amounts);
-  //   return amounts.map(amount => amount * rate);
-  // }
+  const convertCurrency = function({rate, tax, tip = 0.1} = {}, ...amounts) {
+    return amounts.map(amount => amount * rate + (amount * tax) + (amount * tip));
+  };
+  const amounts = convertCurrency({rate: 1.54, tax: 0.2}, 10, 23, 52, 1, 56);
+  console.log(amounts);
 
-  // const amounts = convertCurrency(1.54, 10, 23, 52, 1, 56);
-  // console.log(amounts);
+  const runner = ['Wes Bos', , 5.5, 3.6, 8.1, 1.3, 13.7];
+  const [name, id = 117, ...kilometers] = runner;
 
-  const runner = ['Wes Bos', 123, 5.5, 5, 3, 6, 35];
-  const [name, id, ...runs] = runner;
-  console.log(name, id, runs);
-
-  const team = ['Wes', 'Kait', 'Lux', 'Sheena', 'Kelly'];
-  const [captain, assistant, ...players] = team;
-  console.log(captain, assistant, players)
+  const players = ['Zhenya', 'Viktor', 'Ilya', 'Olga', 'Slava'];
+  const [captain, assistant, ...team] = players;
 
 </script>
 </body>

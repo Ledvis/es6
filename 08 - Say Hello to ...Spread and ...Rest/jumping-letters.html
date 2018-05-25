@@ -30,7 +30,11 @@
   <h2 class="jump">SPREADS!</h2>
 
 <script>
-  
+  const title = document.querySelector('.jump');
+  const transformToSpan = function(word) {
+    return [...word].map((char) => `<span>${char}</span>`).join('')
+  };
+  title.innerHTML = transformToSpan(title.textContent);
 </script>
 </body>
 </html>
