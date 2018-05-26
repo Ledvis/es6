@@ -11,23 +11,18 @@
   </div>
 <body>
 <script>
-  // const people = document.querySelectorAll('.people p');
-  // const peopleArray = Array.from(people, person => {
-  //   console.log(person);
-  //   return person.textContent;
-  // });
-  // console.log(peopleArray);
+  const people = Array.from(document.querySelectorAll('.people p'), (name) => {
+    return name.textContent;
+  });
+  console.log(people);
 
-  // // const names = people.map(person => person.textContent);
+  const sumAll = function() {
+    const numbers = Array.from(arguments);
+    return numbers.reduce((prev, next) => prev += next, 0);
+  };
 
-  function sumAll() {
-    const nums = Array.from(arguments);
-    return nums.reduce((prev, next) => prev + next, 0);
-  }
-
-  sumAll(2, 34, 23, 234, 234, 234234, 234234, 2342);
-
-  const ages = Array.of(12,4,23,62,34);
+  const total = sumAll(2, 18, 31, 8, 83, 12, 42);
+  const ages = Array.of(12, 71, 31, 7, 28);
   console.log(ages);
 
 </script>
