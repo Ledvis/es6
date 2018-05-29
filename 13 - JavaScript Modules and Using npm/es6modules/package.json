@@ -1,26 +1,62 @@
 {
-  "name": "es6modules",
+  "name": "eleken",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "webpack.config.js",
   "scripts": {
-    "build": "webpack --progress --watch"
+    "dev": "webpack --mode development --config webpack.dev.js",
+    "build": "del-cli build && webpack --mode production --config webpack.prod.js",
+    "watch": "webpack --mode development --watch --config webpack.dev.js",
+    "start": "webpack-dev-server --mode development --open --config webpack.dev.js"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ledvis/eleken.git"
+  },
+  "author": "Zhenya",
   "license": "ISC",
-  "dependencies": {
-    "axios": "^0.18.0",
-    "flickity": "^2.1.1",
-    "insane": "^2.6.2",
-    "jquery": "^3.3.1",
-    "jsonp": "^0.2.1",
-    "lodash": "^4.17.10",
-    "slug": "^0.9.1"
+  "bugs": {
+    "url": "https://github.com/Ledvis/eleken/issues"
   },
+  "homepage": "https://github.com/Ledvis/eleken#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.7.0",
-    "webpack": "^4.9.1"
+    "css-loader": "^0.28.11",
+    "del-cli": "^1.1.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-html": "^4.0.3",
+    "eslint-plugin-import": "^2.12.0",
+    "node-sass": "^4.9.0",
+    "postcss-loader": "^2.1.5",
+    "resolve-url-loader": "^2.3.0",
+    "sass-loader": "^7.0.1",
+    "webpack-cli": "^2.1.4",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "autoprefixer": "^8.4.1",
+    "axios": "^0.12.0",
+    "browserslist": "^3.2.8",
+    "copy-webpack-plugin": "^4.5.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "flickity": "^1.2.1",
+    "imagemin-mozjpeg": "^7.0.0",
+    "imagemin-webpack-plugin": "^2.1.5",
+    "insane": "^2.5.0",
+    "jquery": "^3.0.0",
+    "jsonp": "^0.2.0",
+    "lodash": "^4.13.1",
+    "md5": "^2.1.0",
+    "normalize-scss": "^7.0.1",
+    "slug": "^0.9.1",
+    "stylelint": "^9.2.1",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-webpack-plugin": "^0.10.5",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "webpack": "^4.10.0",
+    "webpack-merge": "^4.1.2"
   }
 }
