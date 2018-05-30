@@ -7,15 +7,16 @@
 <body>
 <script>
   function* listPeople() {
-    let i = 0;
-    yield i;
-    i++;
-    yield i;
-    i++;
-    yield i;
+    yield 'Zhenya',
+    yield 'Olga',
+    yield 'Viktor'
   }
 
   const people = listPeople();
+  console.log(people.next());
+  console.log(people.next());
+  console.log(people.next());
+  console.log(people.next());
 
   const inventors = [
     { first: 'Albert', last: 'Einstein', year: 1879 },
@@ -27,16 +28,13 @@
     { first: 'Max', last: 'Planck', year: 1858 },
   ];
 
-  function* loop(arr) {
-    console.log(inventors);
-    for (const item of arr) {
+  function* loop(array) {
+    for (item of array) {
       yield item;
     }
   }
 
   const inventorGen = loop(inventors);
-
-
 </script>
 </body>
 </html>

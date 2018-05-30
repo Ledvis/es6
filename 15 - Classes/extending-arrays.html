@@ -15,7 +15,7 @@
       this.push(movie);
     }
     topRated(limit = 10) {
-      return this.sort((a, b) => (a.stars > b.stars ? -1 : 1)).slice(0, limit);
+      return this.sort((a, b) => a.stars > b.stars ? -1 : 1).slice(0, limit);
     }
   }
 
@@ -26,8 +26,10 @@
     { name: 'King of the Road', stars: 8 }
   );
 
-  movies.add({ name: 'Titanic', stars: 5 });
+  movies.add({name: 'Titanic', stars: 5});
 
+  console.table(movies.topRated());
+  console.table(movies.topRated(2));
 </script>
 </body>
 </html>

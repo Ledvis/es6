@@ -6,18 +6,30 @@
 </head>
 <body>
 <script>
-  function Dog(name, breed) {
-    this.name = name;
-    this.breed = breed;
+  class Dog {
+    constructor(name, breed) {
+      this.name = name;
+      this.breed = breed;
+    }
+    bark() {
+      console.log(`Bark Bark! My name is ${this.name}`);
+    }
+    cuddle() {
+      console.log(`I love you owner!`);
+    }
+    static info() {
+      console.log(`A dog is better than a cat by 10 times`);
+    }
+    get description() {
+      console.log(`${this.name} is ${this.breed} type of dog`);
+    }
+    set nickname(value) {
+      this.nick = value.trim();
+    }
+    get nickname() {
+      return this.nick.toUpperCase();
+    }
   }
-
-  Dog.prototype.bark = function() {
-    console.log(`Bark Bark! My name is ${this.name}`);
-  };
-
-  Dog.prototype.cuddle = function() {
-    console.log(`I love you owner!`);
-  };
 
   const snickers = new Dog('Snickers', 'King Charles');
   const sunny = new Dog('Sunny', 'Golden Doodle');
