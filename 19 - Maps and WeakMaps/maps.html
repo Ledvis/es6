@@ -7,17 +7,15 @@
 <body>
 <script>
   const dogs = new Map();
+  dogs.set('name1', 'Zhenya');
+  dogs.set('name2', 'Olga');
+  dogs.set('name3', 'Viktor');
 
-  dogs.set('Snickers', 3);
-  dogs.set('Sunny', 2);
-  dogs.set('Hugo', 10);
+  dogs.forEach((prop, value) => console.log(prop, value));
 
-  dogs.forEach((val, key) => console.log(val, key));
-
-  for (const [key, val] of dogs) {
-    console.log(key, val);
+  for ([key, value] of dogs) {
+    console.log(key, value);
   }
-
 </script>
 </body>
 </html>

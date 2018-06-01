@@ -9,7 +9,22 @@
 
 <body>
   <script>
+    fetch('https://api.github.com/users/ledvis')
+      .then(data => data.json())
+      .then(data => console.log(data))
+      .catch(error => {
+        console.log('Oh no, something went wrong');
+        console.error(error);
+      });
 
+    const video = document.querySelector('video');
+
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(stream => {
+        video.srcObject = stream;
+        video.load();
+        video.play();
+      });
   </script>
 </body>
 

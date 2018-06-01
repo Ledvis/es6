@@ -25,8 +25,8 @@
   buttons.forEach(button => {
     clickCounts.set(button, 0);
     button.addEventListener('click', function() {
-      const val = clickCounts.get(this);
-      clickCounts.set(this, val + 1);
+      let val = clickCounts.get(this);
+      clickCounts.set(this, ++val);
       console.log(clickCounts);
     });
   });

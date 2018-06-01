@@ -10,37 +10,39 @@
     function breathe(amount) {
       return new Promise((resolve, reject) => {
         if (amount < 500) {
-          reject('That is too small of a value');
+          reject(`${amount} ms is too small`);;
         }
         setTimeout(() => resolve(`Done for ${amount} ms`), amount);
       });
     }
 
     function catchErrors(fn) {
-      return function (...args) {
-        return fn(...args).catch((err) => {
-          console.error('Ohhhh nooo!!!!!');
-          console.error(err);
+      return function(...args) {
+        console.log(args);
+        return fn(...args).catch(error => {
+          console.error('Oh noooooo!!!');
+          console.error(error);
         });
       }
     }
 
-    async function go(name, last) {
-      console.log(`Starting for ${name} ${last}!`);
-      const res = await breathe(1000);
-      console.log(res);
-      const res2 = await breathe(300);
-      console.log(res2);
-      const res3 = await breathe(750);
-      console.log(res3);
-      const res4 = await breathe(900);
-      console.log(res4);
+    async function go(firstName, lastName) {
+      console.log(`Hello ${firstName} ${lastName}`);
+      const result1 = await breathe(600);
+      console.log(result1);
+      const result2 = await breathe(550);
+      console.log(result2);
+      const result3 = await breathe(800);
+      console.log(result3);
+      const result4 = await breathe(350);
+      console.log(result4);
+      const result5 = await breathe(600);
+      console.log(result5);
       console.log('end');
     }
 
     const wrappedFunction = catchErrors(go);
-
-    wrappedFunction('Wes', 'Bos');
+    wrappedFunction('Zhenya', 'Fedyai');
   </script>
 </body>
 
