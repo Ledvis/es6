@@ -7,7 +7,26 @@
 
 <body>
   <script>
+    // navigator.geolocation.getCurrentPosition(function(success) {
+    //   console.log('it worked');
+    //   console.log(success);
+    // }, function(err) {
+    //   console.log('it failed');
+    //   console.log(err);
+    // })
 
+    function getUserPosition(...args) {
+      return new Promise((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(...args, resolve, reject);
+      });
+    }
+
+    async function go() {
+      const position = await getUserPosition();
+      console.log(position);
+    }
+
+    go();
   </script>
 </body>
 

@@ -18,7 +18,6 @@
 
     function catchErrors(fn) {
       return function(...args) {
-        console.log(args);
         return fn(...args).catch(error => {
           console.error('Oh noooooo!!!');
           console.error(error);

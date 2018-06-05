@@ -7,12 +7,24 @@
 
 <body>
   <script>
-    async function go() {
-      const p1 = fetch('https://api.github.com/users/wesbos');
-      const p2 = fetch('https://api.github.com/users/stolinski');
+    // async function go() {
+    //   const p1 = fetch('https://api.github.com/users/wesbos').then(data => data.json());
+    //   const p2 = fetch('https://api.github.com/users/stolinski').then(data => data.json());
+
+    //   const result = await Promise.all([p1, p2]);
+    //   const [wes, stolinski] = result;
+    //   console.log(wes, stolinski);
+    // }
+    // go();
+
+    async function getData(names) {
+      const promises = names.map(name => fetch(`https://api.github.com/users/${name}`).then(data => data.json()));
+      const people = await Promise.all(promises);
+      console.log(people);
     }
 
-    go();
+    getData(['wesbos', 'stolinski', 'darcyclarke'])
+
   </script>
 </body>
 
